@@ -1,0 +1,1 @@
+/home/simonas/.config/emacs/elpaca/repos/ivy-rich/ivy-rich.el

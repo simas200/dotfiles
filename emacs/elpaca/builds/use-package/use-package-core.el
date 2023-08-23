@@ -1,0 +1,1 @@
+/home/simonas/.config/emacs/elpaca/repos/use-package/use-package-core.el
