@@ -2,9 +2,20 @@ autostart/
 cef_user_data/
 cinnamon/
 cinnamon-session/
+Code - OSS/
 dconf/
 discord/
 Electron/
+emacs/auto-save-list/
+emacs/elpa/
+emacs/elpaca/
+emacs/config.el~
+emacs/config.org~
+emacs/early-init.el~
+emacs/init.el~
+emacs/projectile-bookmarks.eld
+emacs/recentf
+
 fish/
 fontconfig/
 GIMP/
