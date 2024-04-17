@@ -1,4 +1,4 @@
-(defvar elpaca-installer-version 0.4)
+(defvar elpaca-installer-version 0.5)
 (defvar elpaca-directory (expand-file-name "elpaca/" user-emacs-directory))
 (defvar elpaca-builds-directory (expand-file-name "builds/" elpaca-directory))
 (defvar elpaca-repos-directory (expand-file-name "repos/" elpaca-directory))
@@ -169,7 +169,7 @@
   :hook (dired-mode . (lambda () (all-the-icons-dired-mode t))))
 
 (defun emacs-counsel-launcher ()
-  "Create and select a frame called emacs-cousel-launcher which consists only of a minibuffer and has specific dimensions. Run counsel-linux-app on that frame, which is an emacs command that prompts you to select an app and open it in a dmenu like behaviour. Delete the frame after that command has exited"
+  "Create and select a frame called emacs-cousel-launcher which consists only of a minibuffer and has specific dimensions. Runs counsel-linux-app on that frame, which is an emacs command that prompts you to select an app and open it in a dmenu like behaviour. Delete the frame after that command has exited"
   (interactive)
   (with-selected-frame
     (make-frame '((name . "emacs-run-launcher")
@@ -214,7 +214,7 @@ error is signaled."
   (interactive)
   (let* ((other-win (windmove-find-other-window 'down))
 	 (buf-this-buf (window-buffer (selected-window))))
-    (if (or (null other-win)
+    (if (or (null other-win) 
             (string-match "^ \\*Minibuf" (buffer-name (window-buffer other-win))))
         (error "No window under this one")
       ;; swap top with this one
@@ -269,10 +269,19 @@ one, an error is signaled."
                           (bookmarks . 3)
                           (projects . 3)
                           (registers . 3)))
+  (setq dashboard-icon-type 'all-the-icons)
   (dashboard-modify-heading-icons '((recents . "file-text")
-                                    (bookmarks . "book")))
+                                  (bookmarks . "book")))
   :config
   (dashboard-setup-startup-hook))
+
+(use-package diminish)
+
+(use-package flycheck
+  :ensure t
+  :defer t
+  :diminish
+  :init (global-flycheck-mode))
 
 (set-face-attribute 'default nil
   ;:font "FiraCode Nerd Font Mono"
@@ -354,6 +363,9 @@ one, an error is signaled."
 (use-package lua-mode)
 (use-package haskell-mode)
 (use-package rust-mode)
+(use-package json-mode)
+(use-package crystal-mode)
+(use-package lsp-mode)
 
 (use-package toc-org
   :commands toc-org-enable
@@ -376,7 +388,6 @@ one, an error is signaled."
   :hook org-mode prog-mode)
 
 (defun reload-init-file ()
-"Reload hack, since one load sometimes does not fully work."
   (interactive)
   (load-file user-init-file)
   (load-file user-init-file))
@@ -447,4 +458,3 @@ one, an error is signaled."
         which-key-max-descrition-length 25
         which-key-allow-imprecise-window-fit nil
         which-key-seperator "->"))
-

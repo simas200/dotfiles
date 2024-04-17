@@ -41,7 +41,7 @@
 * IMPORTANT PROGRAMS TO LOAD FIRST
 ** Elpaca Package Manager
 #+begin_src emacs-lisp
-    (defvar elpaca-installer-version 0.4)
+    (defvar elpaca-installer-version 0.5)
     (defvar elpaca-directory (expand-file-name "elpaca/" user-emacs-directory))
     (defvar elpaca-builds-directory (expand-file-name "builds/" elpaca-directory))
     (defvar elpaca-repos-directory (expand-file-name "repos/" elpaca-directory))
@@ -338,8 +338,9 @@ Emacs Dashboard is an extensible startup screen swowing you recent files, bookma
                           (bookmarks . 3)
                           (projects . 3)
                           (registers . 3)))
+  (setq dashboard-icon-type 'all-the-icons)
   (dashboard-modify-heading-icons '((recents . "file-text")
-                                    (bookmarks . "book")))
+                                  (bookmarks . "book")))
   :config
   (dashboard-setup-startup-hook))
 #+end_src
@@ -474,6 +475,9 @@ Emacs has built-in programming language modes for Lisp, Scheme, DSSSL, Ada, ASM,
 (use-package lua-mode)
 (use-package haskell-mode)
 (use-package rust-mode)
+(use-package json-mode)
+(use-package crystal-mode)
+(use-package lsp-mode)
 #+end_src
 
 * ORG MODE

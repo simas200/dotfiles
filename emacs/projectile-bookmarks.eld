@@ -1,1 +1,1 @@
-nil
+("/mnt/hdd/storage/Crystal/wm/" "~/.config/")

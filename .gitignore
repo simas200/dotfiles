@@ -2,6 +2,7 @@ autostart/
 cef_user_data/
 cinnamon/
 cinnamon-session/
+coc/
 Code - OSS/
 dconf/
 discord/
@@ -16,17 +17,21 @@ emacs/init.el~
 emacs/projectile-bookmarks.eld
 emacs/recentf
 
+evernote-client/
 fish/
 fontconfig/
+freerdp/
+ftb-app/
 GIMP/
 glib-2.0/
 gnome-games/
 gtk-2.0/
 gtk-3.0/
 gtk-4.0/
-herbstluftwm/
 heroic/
 htop/
+ibus/
+KADOKAWA/
 kate/
 KDE/
 kdedefaults/
@@ -36,17 +41,26 @@ libaccounts-glib/
 libreoffice/
 Loop_Hero/
 lutris/
+matplotlib/
 menus/
+mgba/
+MomodoraRUtM/
 nemo/
-nvim/
 plasma-workspace/
-polybar/
 Proxy Studios/
 pulse/
+r2modman/
+r2modmanPlus-local/
+remmina/
+Risk_of_Rain/
 rncbc.org/
 session/
+spotify-tui/
+spotifyd/
 StardewValley/
+SuperCrateBox_YoYo/
 Thunar/
+unity3d/
 vivaldi/
 vlc/
 xfce4/
@@ -62,6 +76,7 @@ discoverrc
 dolphinrc
 drkonqirc
 emaildefaults
+flipscfg
 gtkrc
 gtkrc-2.0
 gwenviewrc
@@ -86,12 +101,15 @@ kmixctrlrc
 kmixrc
 konsolerc
 konsolesshconfig
+kritadisplayrc
+kritarc
 krunnerrc
 kscreenlockerrc
 ksmserverrc
 ksplashrc
 ktimezonedrc
 kwalletrc
+kwinoutputconfig.json
 kwinrc
 kwinrulesrc
 kxkbrc
@@ -103,6 +121,7 @@ plasmanotifyrc
 plasma-org.kde.plasma.desktop-appletsrc
 plasmarc
 plasmashellrc
+pod.ini
 plasma-welcomerc
 powerdevilrc
 powermanagementprofilesrc
@@ -117,3 +136,5 @@ Trolltech.conf
 user-dirs.dirs
 user-dirs.locale
 xdg-desktop-portal-kderc
+
+.gitignore
