@@ -34,7 +34,18 @@ nnoremap <C-t> :NERDTreeToggle<CR>
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
 
-nnoremap <C-l> :NERDTreeFocus<CR>
+" CoC
+function! CheckBackspace() abort
+	let col = col('.') - 1
+	return !col || getline('.')[col - 1] = ~# '\s'
+endfunction
+
+nnoremap <C-l> :call CocActionAsync('jumpDefinition')<CR>
+inoremap <silent><expr> <TAB>
+	\ coc#pum#visible() ? coc#pum#next(1) :
+	\ CheckBackspace() ? "\<Tab>" :
+	\ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
 " Pretty
 :set completeopt-=preview " For no previews
